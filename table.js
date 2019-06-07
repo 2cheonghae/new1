@@ -28,7 +28,19 @@ function bg_color(row,col) {
   tableElements.children[row].children[col].classList.toggle('blue')
 } 
 
-
+function caseSelect(row, col){
+    
+    if((row===0 && (col===0 || col===4)) || (row===4 && (col===0 || col===4))){
+        case1(row, col)
+    }
+    else if(row>0 && row<4 && col>0 && col<4){
+        case2(row, col)
+    }
+    else{
+        case3(row, col)
+    }
+}
+	
 function case1(row, col)  {
 	// (0.0)의 경우 
 	if (row + col === 0) {
@@ -101,16 +113,4 @@ function case3(row, col){
   }
 }
 
- function caseSelect(row, col){
-    
-    if((row===0 && (col===0 || col===4)) || (row===4 && (col===0 || col===4))){
-        case1(row, col)
-    }
-    else if(row>0 && row<4 && col>0 && col<4){
-        case2(row, col)
-    }
-    else{
-        case3(row, col)
-    }
-}
 }   //민주의 도움 잊지말자... 
